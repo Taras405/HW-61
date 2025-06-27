@@ -125,15 +125,15 @@ const account = {
     createTransaction(amount, type) {
         return {
             id: this._nextId++,
-            type,
             amount,
+            type
         };
     },
 
     deposit(amount) {
         if (amount <= 0) {
             console.log('Сума поповнення має бути вище 0');
-            return;
+            return
         }
         this.balance += amount;
         const transaction = this.createTransaction(amount, Transaction.DEPOSIT);
